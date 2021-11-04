@@ -1,6 +1,9 @@
 Map<int, List> userAnswers () {
   return {
-      0: ['YELLOW', 'BLACK', 'RED', 'GREEN'],
+      0: [
+        'YELLOW', 'BLACK', 'RED', 'GREEN',
+        'WHITE', 'ORANGE', 'BLUE', 'BROWN', 'GREEN'
+      ],
       1: ['DOG', 'CAT', 'RABBIT', 'SNAKE'],
       2: [
         'LONDON', 'PARIS', 'NEW YORK', 'TOKYO', 'ROME',

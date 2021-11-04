@@ -11,13 +11,38 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:my_app/main.dart';
 
 void main() {
-  testWidgets('Displays "Hello!"', (WidgetTester tester) async {
+  testWidgets('Displays "Hello Flutter"', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
-
-    // Verify that our app displays "Hello Flutter".
     expect(find.text('Hello Flutter'), findsOneWidget);
-
-    expect(find.byElementType(ElevatedButton), findsNWidgets(3));
   });
+
+  testWidgets('Displays button', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MyApp());
+    expect(find.byType(ElevatedButton), findsOneWidget);
+  });
+
+  testWidgets('Displays input field', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MyApp());
+    expect(find.byType(TextField), findsOneWidget);
+  });
+
+  testWidgets('Should show "Next Question>" inside button when mounted',
+      (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MyApp());
+    expect(find.text('Next Question>'), findsOneWidget);
+  });
+
+  // testWidgets(
+  //     'Should show error message if button is clicked when input is empty',
+  //     (WidgetTester tester) async {
+  //   // Build our app and trigger a frame.
+  //   await tester.pumpWidget(MyApp());
+  //   expect(find.text('Next Question>'), findsOneWidget);
+  //   await tester.tap(find.byType(ElevatedButton));
+  //   expect(find.text('* Please select an answer'), findsOneWidget);
+  // });
 }

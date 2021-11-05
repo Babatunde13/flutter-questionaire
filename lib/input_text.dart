@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class InputTextWidget extends StatelessWidget {
-  void Function(String)? onChanged;
-  String? placeholder;
+  final void Function(String)? onChanged;
+  final String? placeholder;
 
   InputTextWidget({this.onChanged, this.placeholder});
 
@@ -10,6 +10,8 @@ class InputTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       onChanged: onChanged,
+      textAlignVertical: TextAlignVertical.center,
+      textAlign: TextAlign.center,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
         hintText: placeholder,

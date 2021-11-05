@@ -61,18 +61,12 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            TextWidget(
-              text: _errorMessage != '' ? '* $_errorMessage' : '',
-              color: Colors.red,
-              fontSize: 10,
-            ),
-            // Text(
-            //   _errorMessage != '' ? '* $_errorMessage' : '',
-            //   style: TextStyle(
-            //     color: Colors.red,
-            //     fontSize: 10,
-            //   ),
-            // ),
+            if (_errorMessage != '')
+              TextWidget(
+                text: '* $_errorMessage',
+                color: Colors.red,
+                fontSize: 10,
+              ),
             TextWidget(text: questions[_questionIdx]),
             InputTextWidget(
                 onChanged: (String value) {
@@ -81,17 +75,6 @@ class _MyAppState extends State<MyApp> {
                   });
                 },
                 placeholder: 'Enter your answer here'),
-            // TextField(
-            //   onChanged: (String value) {
-            //     setState(() {
-            //       _answer = value;
-            //     });
-            //   },
-            //   decoration: const InputDecoration(
-            //     border: OutlineInputBorder(),
-            //     hintText: 'Enter your answer here',
-            //   ),
-            // ),
             ElevatedButton(
               child: Text(_buttonText),
               onPressed: _answerQuestion,
